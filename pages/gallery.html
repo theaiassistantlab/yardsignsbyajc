@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Yard Signs by AJC | See Our Yard Sign Displays</title>
+  <meta name="description" content="Browse photos of our yard sign displays for birthdays, graduations, anniversaries, and more in Polk County, Oregon. See the smiles we've created for families across Independence, Monmouth & Dallas.">
+  <link rel="canonical" href="https://yardsignsbyajc.com/gallery">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=plus-jakarta-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .gallery-filters {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: var(--space-10);
+    }
+    .filter-btn {
+      padding: var(--space-2) var(--space-5);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-border);
+      color: var(--color-text-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all var(--transition-interactive);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-primary-highlight);
+    }
+    .gallery-masonry {
+      columns: 3 280px;
+      gap: var(--space-4);
+    }
+    .gallery-masonry .gallery-item {
+      break-inside: avoid;
+      margin-bottom: var(--space-4);
+      aspect-ratio: unset;
+      height: auto;
+    }
+    .gallery-item-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-offset);
+    }
+    .gallery-item-inner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item-inner:hover img { transform: scale(1.04); }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, oklch(0.15 0.04 30 / 0.8));
+      padding: var(--space-4);
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item-inner:hover .gallery-overlay { transform: translateY(0); }
+    .gallery-overlay span {
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .occasion-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--color-surface-offset), var(--color-surface-offset-2));
+      border-radius: var(--radius-lg);
+      padding: var(--space-10) var(--space-6);
+      text-align: center;
+      gap: var(--space-3);
+    }
+    .occasion-placeholder .icon { font-size: 3rem; }
+    .occasion-placeholder .label {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .occasion-placeholder .sublabel {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main id="main-content">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">Real celebrations, real smiles</span>
+        <h1 id="page-title">Our Gallery</h1>
+        <p>From birthdays to retirements, every yard sign we set up tells a story of joy. Browse some of our favorite setups across Polk County.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="gallery-filters reveal" role="tablist" aria-label="Filter gallery by occasion">
+          <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Occasions</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="birthday">Birthdays 🎂</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="graduation">Graduations 🎓</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="anniversary">Anniversaries 💍</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="baby">Baby &amp; Family 👶</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="seasonal">Seasonal 🎃</button>
+        </div>
+
+        <!-- Gallery grid with illustrated placeholders -->
+        <div class="gallery-masonry reveal" id="gallery-grid">
+
+          <div class="gallery-item" data-category="birthday">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:280px;">
+                <span class="icon">🎂</span>
+                <span class="label">Happy Birthday!</span>
+                <span class="sublabel">Personalized yard display</span>
+              </div>
+              <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="graduation">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:340px;background:linear-gradient(135deg,var(--color-primary-highlight),var(--color-gold-highlight));">
+                <span class="icon">🎓</span>
+                <span class="label">Class of 2025</span>
+                <span class="sublabel">Graduation yard sign display</span>
+              </div>
+              <div class="gallery-overlay"><span>Graduation Display</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="baby">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:260px;background:linear-gradient(135deg,#f0e4ff,#e4f0ff);">
+                <span class="icon">👶</span>
+                <span class="label">It's a Girl!</span>
+                <span class="sublabel">Baby shower display</span>
+              </div>
+              <div class="gallery-overlay"><span>Baby Shower</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="birthday">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:320px;background:linear-gradient(135deg,var(--color-gold-highlight),var(--color-primary-highlight));">
+                <span class="icon">🥳</span>
+                <span class="label">Quinceañera</span>
+                <span class="sublabel">Special 15th birthday</span>
+              </div>
+              <div class="gallery-overlay"><span>Quinceañera</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="anniversary">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:290px;background:linear-gradient(135deg,#ffe4ec,var(--color-gold-highlight));">
+                <span class="icon">💍</span>
+                <span class="label">Happy Anniversary!</span>
+                <span class="sublabel">25 years of love</span>
+              </div>
+              <div class="gallery-overlay"><span>Anniversary Celebration</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="seasonal">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:270px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);">
+                <span class="icon">🎃</span>
+                <span class="label">BOO!</span>
+                <span class="sublabel">Halloween Boo Greeting</span>
+              </div>
+              <div class="gallery-overlay"><span>Boo Greeting</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="birthday">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:300px;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);">
+                <span class="icon">🎈</span>
+                <span class="label">Sweet 16</span>
+                <span class="sublabel">Milestone birthday display</span>
+              </div>
+              <div class="gallery-overlay"><span>Sweet 16</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="graduation">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:260px;background:linear-gradient(135deg,var(--color-primary-highlight),#e3f2fd);">
+                <span class="icon">⭐</span>
+                <span class="label">Sport Keepsake</span>
+                <span class="sublabel">Soccer athlete honor</span>
+              </div>
+              <div class="gallery-overlay"><span>Sport Keepsake</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="baby">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:310px;background:linear-gradient(135deg,#e3f2fd,#e8eaf6);">
+                <span class="icon">💙</span>
+                <span class="label">It's a Boy!</span>
+                <span class="sublabel">Gender reveal celebration</span>
+              </div>
+              <div class="gallery-overlay"><span>Gender Reveal</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="seasonal">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:280px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+                <span class="icon">🧝</span>
+                <span class="label">Elf Hunt!</span>
+                <span class="sublabel">Polk County Elf Hunt</span>
+              </div>
+              <div class="gallery-overlay"><span>Elf Hunt Fundraiser</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="birthday">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:330px;">
+                <span class="icon">🏆</span>
+                <span class="label">Retirement!</span>
+                <span class="sublabel">Celebrating a career well done</span>
+              </div>
+              <div class="gallery-overlay"><span>Retirement Party</span></div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="seasonal">
+            <div class="gallery-item-inner">
+              <div class="occasion-placeholder" style="height:270px;background:linear-gradient(135deg,#e8f5e9,#e0f7fa);">
+                <span class="icon">🎄</span>
+                <span class="label">Christmas Keepsake</span>
+                <span class="sublabel">Holiday decorations</span>
+              </div>
+              <div class="gallery-overlay"><span>Christmas Keepsake</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-10 reveal">
+          <p style="color:var(--color-text-muted);margin-bottom:var(--space-6);">Want to see your celebration featured here? Tag us on Instagram <strong>@yard_signs_by_ajc</strong> or Facebook!</p>
+          <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+            <a href="./book-now.html" class="btn btn-primary btn-lg">Book Your Yard Sign</a>
+            <a href="https://www.instagram.com/yard_signs_by_ajc" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Follow on Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../components.js" defer></script>
+  <script>
+    // Gallery filter
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.gallery-item');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          const filter = this.dataset.filter;
+          items.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
